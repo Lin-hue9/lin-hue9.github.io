@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <title>Lindsay Scott | Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Google Fonts for Cute/Bubbly Style -->
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
   <!-- Emoji Favicon -->
   <link rel="icon" type="image/png" href="https://twemoji.maxcdn.com/v/latest/72x72/1f43c.png">
 
@@ -16,7 +16,7 @@
       --white: #fff8fc;
       --gray: #f8f8f8;
       --shadow: 0 2px 12px #ffd6ec;
-      --font-bubble: 'Pacifico', cursive;
+      --font-title: 'Berkshire Swash', cursive;
       --font-body: 'Quicksand', sans-serif;
     }
 
@@ -27,6 +27,28 @@
       margin: 0;
       padding: 0;
       min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Animated background stars */
+    .star {
+      position: fixed;
+      z-index: 0;
+      width: 38px;
+      height: 38px;
+      opacity: 0.6;
+      pointer-events: none;
+      animation: twinkle 3.5s infinite;
+    }
+    .star1 { top: 7%; left: 10%; animation-delay: 0s; }
+    .star2 { top: 18%; left: 80%; animation-delay: 1s;}
+    .star3 { top: 67%; left: 18%; animation-delay: 2s;}
+    .star4 { top: 50%; left: 65%; animation-delay: 0.7s;}
+    .star5 { top: 83%; left: 75%; animation-delay: 1.8s;}
+    .star6 { top: 32%; left: 40%; animation-delay: 2.7s;}
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.6; transform: scale(1);}
+      50% { opacity: 1; transform: scale(1.17);}
     }
 
     .container {
@@ -36,6 +58,8 @@
       max-width: 750px;
       box-shadow: var(--shadow);
       padding: 36px 24px 24px 24px;
+      position: relative;
+      z-index: 2;
     }
 
     header {
@@ -51,9 +75,10 @@
       box-shadow: 0 0 0 6px var(--accent-pink);
       object-fit: cover;
       background: white;
+      border: 2px solid #ffb6d5;
     }
     h1 {
-      font-family: var(--font-bubble);
+      font-family: var(--font-title);
       color: var(--main-pink);
       margin: 0;
       font-size: 2.5rem;
@@ -77,10 +102,12 @@
     }
 
     h2 {
-      font-family: var(--font-bubble);
+      font-family: var(--font-title);
       color: var(--main-pink);
       margin-bottom: 0.6em;
       font-size: 1.5rem;
+      letter-spacing: 1px;
+      text-shadow: 1px 2px 6px #ffd6ec80;
     }
 
     .projects .project {
@@ -89,11 +116,28 @@
       margin-bottom: 1.2em;
       padding: 18px;
       box-shadow: 0 1px 6px #ffd6ec55;
+      transition: transform 0.17s cubic-bezier(.4,2,.6,1), box-shadow 0.17s;
+      will-change: transform;
+      z-index: 2;
+      position: relative;
+    }
+    .projects .project:hover {
+      transform: scale(1.045) rotate(-1deg);
+      box-shadow: 0 4px 20px #ffd6ec;
+      animation: pop .5s;
+    }
+    @keyframes pop {
+      0% { transform: scale(1);}
+      40% { transform: scale(1.08);}
+      100% { transform: scale(1.045);}
     }
     .projects .project-title {
       font-weight: bold;
       font-size: 1.13rem;
       margin-bottom: 0.2em;
+      font-family: var(--font-title);
+      color: #e75480;
+      letter-spacing: 1px;
     }
     .project .badges {
       margin-bottom: 6px;
@@ -168,6 +212,7 @@
       border-radius: 7px;
       margin-bottom: 1.3em;
       font-size: 1.08em;
+      font-family: var(--font-body);
     }
 
     .now-playing {
@@ -242,20 +287,36 @@
   </style>
 </head>
 <body>
+  <!-- Pastel Animated Stars -->
+  <img class="star star1" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Emoji_u2b50.svg/48px-Emoji_u2b50.svg.png" alt="star">
+  <img class="star star2" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Emoji_u2b50.svg/48px-Emoji_u2b50.svg.png" alt="star">
+  <img class="star star3" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Emoji_u2b50.svg/48px-Emoji_u2b50.svg.png" alt="star">
+  <img class="star star4" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Emoji_u2b50.svg/48px-Emoji_u2b50.svg.png" alt="star">
+  <img class="star star5" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Emoji_u2b50.svg/48px-Emoji_u2b50.svg.png" alt="star">
+  <img class="star star6" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Emoji_u2b50.svg/48px-Emoji_u2b50.svg.png" alt="star">
+
   <img class="panda-float" src="https://cdn.pixabay.com/photo/2017/01/31/19/13/animal-2028252_1280.png" alt="Cute Panda">
 
   <div class="container">
     <header>
-      <img class="avatar" src="https://api.dicebear.com/7.x/bottts/svg?seed=panda" alt="Lindsay's Avatar">
+      <img class="avatar" src="https://raw.githubusercontent.com/Lin-hue9/lin-hue9.github.io/main/C7063E6A-64E0-4C73-957B-FA5623C63F2D.PNG" alt="Lindsay's Avatar">
       <div>
         <h1>Lindsay Scott</h1>
         <div class="bio">
-          🐼 High school student who loves coding, cats, and bubble tea!<br>
+          Hi! I'm Lindsay, a driven high school student at Arabia Mountain with a passion for technology, creativity, and leadership.<br>
+          🐼 I love coding, cats, and bubble tea.<br>
           🎨 Aspiring software engineer & digital artist.<br>
-          🍰 I bake and sell mini cakes & cookies at Arabia Mountain High School!
+          🍰 Entrepreneur – I bake and sell mini cakes & cookies at school!
         </div>
       </div>
     </header>
+
+    <section>
+      <h2>🌟 Summary</h2>
+      <div class="about-box">
+        Motivated and creative high school student with strong interests in computer science, leadership, and business. Experienced in C, Scratch, Python, and web development, with a passion for building engaging educational projects. Recognized for my initiative as Beta Club Secretary and for balancing academics, athletics, entrepreneurship, and continuous self-learning. Currently studying Intro to Software and French 2.
+      </div>
+    </section>
 
     <section class="projects">
       <h2>✨ Featured Project</h2>
@@ -275,7 +336,7 @@
         </div>
         <div class="project-links">
           <a href="https://youtu.be/f4yEk2inKkw" target="_blank">🎥 Video Demo</a>
-          <!-- <a href="YOUR STUDYBUDDY AI LINK" target="_blank">🌐 Try StudyBuddy AI</a> -->
+          <a href="https://studybuddy-ai.vercel.app/" target="_blank">🌐 Try StudyBuddy AI</a>
         </div>
       </div>
     </section>
@@ -286,23 +347,40 @@
         <li>💻 C Programming</li>
         <li>🧠 Algorithms</li>
         <li>🐍 Python</li>
+        <li>🌐 Web Development</li>
         <li>🎮 Game Design</li>
         <li>🔢 Problem Solving</li>
         <li>🐼 Scratch</li>
         <li>🔎 Debugging</li>
         <li>🌸 Creativity</li>
-        <li>🎂 Baking</li>
+        <li>🎂 Entrepreneurship</li>
         <li>👩‍💻 Teamwork</li>
+        <li>📚 Leadership</li>
+        <li>💬 French (Intermediate)</li>
+        <li>🖥️ Intro to Software</li>
+        <li>🏃 Track & Field</li>
       </ul>
+    </section>
+
+    <section>
+      <h2>🏅 Leadership & Activities</h2>
+      <div class="about-box">
+        <ul class="fun-facts-list">
+          <li><strong>Beta Club Secretary</strong> – Organized events, managed club records, and led meetings for a national honor society focused on academic excellence, service, and leadership.</li>
+          <li><strong>Track & Field Athlete</strong> – Competed as a sprinter and relay runner, developing discipline and teamwork.</li>
+          <li><strong>Entrepreneur</strong> – Founded a mini cake & cookie business, selling at Arabia Mountain High School.</li>
+          <li><strong>Language Learner</strong> – Currently enrolled in French 2, building strong communication and global skills.</li>
+        </ul>
+      </div>
     </section>
 
     <section>
       <h2>💖 About Me</h2>
       <div class="about-box">
-        Hi! I'm Lindsay, a high school student at Arabia Mountain who loves coding, baking mini cakes and cookies, and turning ideas into reality. When I'm not programming or designing, you’ll find me selling sweets at school or sketching digital art. My dream is to become a software engineer and maybe open a cute bakery on the side!
+        Outside of classes and coding, I enjoy baking, digital art, and exploring new tech tools. Whether I’m selling sweets at school, designing a new website, or helping classmates, I always bring creativity and positivity to everything I do. My goal is to become a software engineer and one day open a welcoming bakery or café!
       </div>
       <div class="fun-facts">
-        <h3>🎀 Fun Facts</h3>
+        <h3 style="font-family:var(--font-title); color:#e75480;">🎀 Fun Facts</h3>
         <ul class="fun-facts-list">
           <li>My favorite color is pink! 🌸</li>
           <li>I love pandas and cats 🐼🐱</li>
@@ -349,4 +427,3 @@
   </div>
 </body>
 </html>
-
