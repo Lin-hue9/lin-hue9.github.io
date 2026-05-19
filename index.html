@@ -30,27 +30,6 @@
       overflow-x: hidden;
     }
 
-    /* Animated background stars */
-    .star {
-      position: fixed;
-      z-index: 0;
-      width: 38px;
-      height: 38px;
-      opacity: 0.6;
-      pointer-events: none;
-      animation: twinkle 3.5s infinite;
-    }
-    .star1 { top: 7%; left: 10%; animation-delay: 0s; }
-    .star2 { top: 18%; left: 80%; animation-delay: 1s;}
-    .star3 { top: 67%; left: 18%; animation-delay: 2s;}
-    .star4 { top: 50%; left: 65%; animation-delay: 0.7s;}
-    .star5 { top: 83%; left: 75%; animation-delay: 1.8s;}
-    .star6 { top: 32%; left: 40%; animation-delay: 2.7s;}
-    @keyframes twinkle {
-      0%, 100% { opacity: 0.6; transform: scale(1);}
-      50% { opacity: 1; transform: scale(1.17);}
-    }
-
     .container {
       background: var(--white);
       border-radius: 18px;
@@ -231,6 +210,16 @@
       height: 25px;
     }
 
+    .now-playing a {
+      margin-left: 12px;
+      color: #e75480;
+      font-size: 0.95em;
+      text-decoration: none;
+    }
+    .now-playing a:hover {
+      text-decoration: underline;
+    }
+
     .contact-links {
       display: flex;
       flex-wrap: wrap;
@@ -287,19 +276,11 @@
   </style>
 </head>
 <body>
-  <!-- Pastel Animated Stars -->
-  <img class="star star1" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Emoji_u2b50.svg/48px-Emoji_u2b50.svg.png" alt="star">
-  <img class="star star2" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Emoji_u2b50.svg/48px-Emoji_u2b50.svg.png" alt="star">
-  <img class="star star3" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Emoji_u2b50.svg/48px-Emoji_u2b50.svg.png" alt="star">
-  <img class="star star4" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Emoji_u2b50.svg/48px-Emoji_u2b50.svg.png" alt="star">
-  <img class="star star5" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Emoji_u2b50.svg/48px-Emoji_u2b50.svg.png" alt="star">
-  <img class="star star6" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Emoji_u2b50.svg/48px-Emoji_u2b50.svg.png" alt="star">
-
   <img class="panda-float" src="https://cdn.pixabay.com/photo/2017/01/31/19/13/animal-2028252_1280.png" alt="Cute Panda">
 
   <div class="container">
     <header>
-      <img class="avatar" src="https://raw.githubusercontent.com/Lin-hue9/lin-hue9.github.io/main/C7063E6A-64E0-4C73-957B-FA5623C63F2D.PNG" alt="Lindsay's Avatar">
+      <img class="avatar" src="https://api.dicebear.com/7.x/bottts/svg?seed=bubbletea" alt="Lindsay's Avatar">
       <div>
         <h1>Lindsay Scott</h1>
         <div class="bio">
@@ -336,7 +317,6 @@
         </div>
         <div class="project-links">
           <a href="https://youtu.be/f4yEk2inKkw" target="_blank">🎥 Video Demo</a>
-          <a href="https://studybuddy-ai.vercel.app/" target="_blank">🌐 Try StudyBuddy AI</a>
         </div>
       </div>
     </section>
@@ -396,11 +376,12 @@
     <section>
       <h2>🎵 Now Playing</h2>
       <div class="now-playing">
-        <span>🌸 Lo-fi Chillhop</span>
+        <span>🎶 robloxsonges x kpop demon hunters</span>
         <audio controls loop>
-          <source src="https://cdn.pixabay.com/audio/2022/07/26/audio_124bfae0e2.mp3" type="audio/mpeg">
+          <source src="https://cdn.pixabay.com/audio/2024/03/01/audio_455662.mp3" type="audio/mpeg">
           Your browser does not support the audio element.
         </audio>
+        <a href="https://pixabay.com/music/beats-robloxsonges-x-kpop-demon-hunters-455662/" target="_blank">Listen on Pixabay</a>
       </div>
     </section>
 
